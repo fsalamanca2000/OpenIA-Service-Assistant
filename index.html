@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente virtual</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="img/bot.png" type="png" sizes="32px">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <button type="button" class="btn btn-warning" id="btnInstrucciones" data-bs-toggle="modal"
+            data-bs-target="#Instrucciones">
+            <h2>?</h2>
+        </button>
+        <button type="button" class="btn btn-info  " id="asistente" data-bs-toggle="modal"
+            data-bs-target="#asistenteVirtual">
+            <img src="img/bot.png" alt="" width="50">
+        </button>
+        <div class="row">
+            <center>
+                <img src="img/ajolote.png" alt="logo-ajolote" width="150px">
+                <h1 id="titulo">TU ASISTENTE VIRTUAL</h1>
+            </center>
+            <br><br><br><br><br>
+        </div>
+
+        <div class="row">
+            <div id="pregunta" class="list-group">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="chat" class="list-group">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group mb-3">
+                <input type="text" name="txt_buscador" id="txt_buscador" class="form-control">
+
+                <button class="btn btn-primary consultar"> <img src="img/lupa.png" id="lupa-img" width="32px">BUSCAR</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        <center>
+            <button type="button" class="btn btn-success" id="sonidoActivado"> <img src="img/comando-de-voz.png" id="voz-img" width="32px">ACTIVAR SONIDO</button>
+            <button type="button" class="btn btn-danger" id="sonidoDesactivado"> <img src="img/comando-de-voz.png" id="voz-img" width="32px">DESACTIVAR SONIDO</button>
+            <button type="button" class="btn btn-info" id="buscarAudio" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"> <img src="img/voz.png" id="voz-img" width="32px"> PREGUNTAR POR AUDIO</button>
+        </center>
+    </div>
+    <!-- Modal Buscar-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">BUSCAR POR MEDIO DEL AUDIO </h5>
+                    <button type="button" class="btn-primary" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="fondoConsultar">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger cancelar" data-bs-dismiss="modal">CANCELAR</button>
+                    <button type="button" class="btn btn-warning" id="limpiar">LIMPIAR</button>
+                    <button type="button" class="btn btn-primary consultar" data-bs-dismiss="modal">BUSCAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Instrucciones -->
+    <div class="modal fade" id="Instrucciones" tabindex="-1" aria-labelledby="Instrucciones" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="InstruccionesLabel"><strong>Comandos:</strong></h1>
+                    <button type="button" class="btn-primary" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item"><strong>INSTRUCCIONES:</strong> Abre el cuadro
+                            de instrucciones por comando de voz.</li>
+                        <li class="list-group-item"><strong>ACTIVAR:</strong> Activa el sonido del
+                            computador para leer la respuesta del asistente virtual.</li>
+                        <li class="list-group-item"><strong>DESACTIVAR:</strong> Desactiva el
+                            sonido del computador para leer la respuesta del asistente virtual</li>
+                        <li class="list-group-item"><strong>BUSCAR:</strong> Envia la pregunta al
+                            asistente virtual.</li>
+                        <li class="list-group-item"><strong>PREGUNTAR:</strong> Abre un cuadro
+                            donde recibe la pregunta por audio para enviarla al asistente virtual.</li>
+                        <li class="list-group-item"><strong>ASISTENTE:</strong> Abre un cuadro
+                            donde se puede escoger el tipo de asistente virtual.</li>
+                        <li class="list-group-item"><strong>CANCELAR:</strong> Se cierra el cuadro
+                            donde tenga la opción de un boton para cerrar.</li>
+
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger cancelar" data-bs-dismiss="modal">CANCELAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal asistente-->
+    <div class="modal fade" id="asistenteVirtual" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="asistenteVirtualLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="asistenteVirtualLabel">ESCOGE EL ASISTENTE VIRTUAL: </h5>
+                    <button type="button" class="btn-primary" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-outline-primary"><img src="img/messi.png" alt="futbolista-img"
+                            width="119" id="doctor"><br>Futbolista</button>
+                    <button type="button" class="btn btn-outline-primary"><img src="img/programador.png" alt="programador-img"
+                            width="119" id="programador"><br>Programador</button>
+                    <button type="button" class="btn btn-outline-primary"><img src="img/biologo.png" alt="biologo-img"
+                            width="119" id="biologo"><br>Biologo</button>
+                    <button type="button" class="btn btn-outline-primary"><img src="img/doctor.png" alt="doctor-img"
+                            width="119" id="doctor"><br>Doctor</button>
+                    <button type="button" class="btn btn-outline-primary"><img src="img/abogado.png" alt="abogado-img"
+                            width="119" id="abogado"><br>Abogado</button>
+                    <button type="button" class="btn btn-outline-primary"><img src="img/maestro.png" alt="matematico-img"
+                            width=" 119" id="matematico"><br>Matemático</button>
+                    <button type="button" class="btn btn-outline-primary"><img src="img/boton-x.png" alt="nadie-img"
+                            width=" 119" id="ninguno"><br>Ninguno</button>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger cancelar" data-bs-dismiss="modal">CANCELAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Libreria JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--Libreria showdown:-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+    <script src="js/artyom.window.js"></script>
+    <!--bootstrao libreria js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
